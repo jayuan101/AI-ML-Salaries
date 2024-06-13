@@ -9,6 +9,15 @@ df = pd.read_csv("salaries.csv")
 def main():
     st.title("Salaries Data Dashboard")
 
+  # Sidebar menu
+    menu = ["Overview", "Job Titles", "Statistics", "Salary Distribution"]
+    choice = st.sidebar.selectbox("Menu", menu)
+
+    if choice == "Overview":
+        st.subheader("Overview")
+        st.write(df)
+
+    
     # Display the DataFrame
     st.write("## Data")
     st.write(df)
