@@ -3,7 +3,7 @@ import pandas as pd
 
 # Load the CSV file
 file_path = 'C:/Users/young/OneDrive/Desktop/salaries.csv'  # Use forward slashes
-df = pd.read_csv(file_path)
+df = pd.read_csv('salaries')
 
 # Streamlit app
 def main():
