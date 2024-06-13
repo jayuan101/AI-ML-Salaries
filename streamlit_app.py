@@ -8,12 +8,19 @@ df = pd.read_csv("salaries.csv")
 # Streamlit app
 def main():
     st.title("Salaries Data Dashboard")
+# Preprocess the data
+df = df.dropna()  # Drop missing values
+df = pd.get_dummies(df, columns=['experience_level', 'employment_type', 'job_title', 'salary_currency', 'employee_residence', 'company_location', 'company_size'])
 
-  # Sidebar menu
-    menu = ["Overview", "Job Titles", "Statistics", "Salary Distribution"]
+# Streamlit app
+def main():
+    st.title("Salaries Data Dashboard")
+
+    # Sidebar menu
+    menu = ["Overview", "Job Titles", "Statistics", "Salary Distribution", "Machine Learning"]
     choice = st.sidebar.selectbox("Menu", menu)
 
-       if choice == "Overview":
+    if choice == "Overview":
         st.subheader("Overview")
         st.write(df)
     
@@ -63,7 +70,7 @@ def main():
             st.write(f"Accuracy: {accuracy}")
             st.write("Predictions vs Actuals")
             st.write(pd.DataFrame({"Actual": y_test, "Predicted": predictions}))
-    
+
     # Display the DataFrame
     st.write("## Data")
     st.write(df)
