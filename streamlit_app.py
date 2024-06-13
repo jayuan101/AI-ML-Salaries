@@ -11,9 +11,7 @@ def main():
         # Read the CSV file
         df = pd.read_csv(uploaded_file)
 
-        # Display the DataFrame
-        st.write("## Data")
-        st.write(df)
+  
 
         # Filter by job title
         job_titles = df['job_title'].unique()
