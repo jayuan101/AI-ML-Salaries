@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 
 # Load the CSV file
-file_path = 'C:/Users/young/OneDrive/Desktop'  # Use forward slashes
-df = pd.read_csv('salaries.csv')
+file_path = 'C:/Users/young/OneDrive/Desktop/salaries.csv'  # Use forward slashes
+df = pd.read_csv("salaries")
 
 # Streamlit app
 def main():
